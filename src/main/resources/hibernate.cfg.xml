@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/canteen_online</property>
+		<property name="connection.username">astral_code</property>
+		<property name="connection.password">pass</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Disable the second-level cache  -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+		<property name="format_sql">false</property>
+		<property name="use_sql_comments">false</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<!--property name="hbm2ddl.auto">create</property-->
+
+		<!-- Names the annotated entity class -->
+		<mapping class="com.astralcode.canteenonlineservice.domain.Canteen"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.Dish"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.DishType"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.Rank"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.Menu"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.Meal"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.MealType"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.MealDish"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.Price"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.Information"/>
+		<mapping class="com.astralcode.canteenonlineservice.domain.DayWeek"/>
+	</session-factory>
+</hibernate-configuration>
